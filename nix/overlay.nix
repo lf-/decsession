@@ -6,7 +6,7 @@ in {
     packages = super.haskell.packages // {
       "${ghcVer}" = super.haskell.packages."${ghcVer}".override {
         overrides = hself: hsuper: {
-          decsession = hsuper.callCabal2nix "decsession" ../decsession.cabal { };
+          decsession = hsuper.callCabal2nix "decsession" ../. { };
         };
       };
     };
