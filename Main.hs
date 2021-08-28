@@ -20,5 +20,5 @@ main = do
     -- BS.putStr cookie
     dec <- maybe (fail "failed to decrypt cookie") pure $ decrypt key cookie
     dec' <- either fail pure $ decode dec :: IO SessionCookie
-    putStrLn $ show dec'
+    print dec'
     return ()
